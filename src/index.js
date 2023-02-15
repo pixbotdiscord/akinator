@@ -43,7 +43,7 @@ function getButtonReply(interaction) {
 
 module.exports = async function (input, options = {}) {
     // check discord.js version
-    if (Discord.version.split(".")[0] < 14) return console.log("Discord.js Akinator Error: Discord.js v14 or Higher is Required.\nNeed Help? Join Our Discord Server at 'https://discord.gg/P2g24jp'");
+    if (Discord.version.split(".")[0] < 14) return console.log("Discord.js Akinator Error: Discord.js v14 or Higher is Required.\nNeed Help? Join Our Discord Server at 'https://discord.gg/gbZtdK6jvz'");
 
     let inputData = {};
     try {
@@ -58,9 +58,9 @@ module.exports = async function (input, options = {}) {
         options.gameType = options.gameType.toLowerCase();
 
         // error handling
-        if (!input) return console.log("Discord.js Akinator Error: Message or CommandInteraction was not Provided.\nNeed Help? Join Our Discord Server at 'https://discord.gg/P2g24jp'");
-        if (!input.client) return console.log("Discord.js Akinator Error: Message or CommandInteration Provided was Invalid.\nNeed Help? Join Our Discord Server at 'https://discord.gg/P2g24jp'");
-        if (!input.guild) return console.log("Discord.js Akinator Error: Cannot be used in Direct Messages.\nNeed Help? Join Our Discord Server at 'https://discord.gg/P2g24jp'");
+        if (!input) return console.log("Discord.js Akinator Error: Message or CommandInteraction was not Provided.\nNeed Help? Join Our Discord Server at 'https://discord.gg/gbZtdK6jvz'");
+        if (!input.client) return console.log("Discord.js Akinator Error: Message or CommandInteration Provided was Invalid.\nNeed Help? Join Our Discord Server at 'https://discord.gg/gbZtdK6jvz'");
+        if (!input.guild) return console.log("Discord.js Akinator Error: Cannot be used in Direct Messages.\nNeed Help? Join Our Discord Server at 'https://discord.gg/gbZtdK6jvz'");
         if (!fs.existsSync(`${__dirname}/translations/${options.language}.json`)) return console.log(`Discord.js Akinator Error: Language "${options.language}" Not Found. Examples are: "en" or "fr" or "es".\nNeed Help? Join Our Discord Server at 'https://discord.gg/P2g24jp'`);
         if (!["animal", "character", "object"].includes(options.gameType)) return console.log(`Discord.js Akinator Error: Game Type "${options.gameType}" Not Found. Choose from: "animal", "character" or "object".\nNeed Help? Join Our Discord Server at 'https://discord.gg/P2g24jp'`);
 
@@ -70,7 +70,7 @@ module.exports = async function (input, options = {}) {
                 inputData.author = input.author ? input.author : input.user,
                 inputData.channel = input.channel
         } catch {
-            return console.log("Discord.js Akinator Error: Failed to Parse Input for Use.\nJoin Our Discord Server for Support at 'https://discord.gg/P2g24jp'");
+            return console.log("Discord.js Akinator Error: Failed to Parse Input for Use.\nJoin Our Discord Server for Support at 'https://discord.gg/gbZtdK6jvz'");
         }
 
         //auto-resetting 
@@ -270,9 +270,10 @@ module.exports = async function (input, options = {}) {
 
                     let thinkingEmbed = {
                         title: `${translations.question} ${aki.currentStep + 1}`,
-                        description: `**${translations.progress}: ${Math.round(aki.progress)}%\n${await translate(aki.question, options.language)}**`,
                         color: options.embedColor,
-                        fields: [],
+                        fields: [
+                            { name: `${translations.fields2}`, value: `**${translations.progress}: ${Math.round(aki.progress)}%\n${await translate(aki.question, options.language)}}**` },
+                            ],
                         author: { name: usertag, icon_url: avatar },
                         footer: { text: translations.thinking }
                     }
