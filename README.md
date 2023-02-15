@@ -1,12 +1,12 @@
 <h1 align="center">
-    🔮 Akinator.js 🔮
+    🔮 Akinator-djs 🔮
 </h1>
 
 A Discord.js v14 Module that allows you to Create an Akinator Command for Your Discord Bot within Seconds of Installation.
 
-[![NPM](https://nodei.co/npm/akinatorjs.png)](https://npmjs.com/package/akinatorjs)
+[![NPM](https://nodei.co/npm/akinator-djs.png)](https://npmjs.com/package/akinator.js)
 
-[![Downloads](https://img.shields.io/npm/dt/discord.js-akinator?logo=npm&style=flat-square)](https://npmjs.com/package/Ahmed1Dev/Akinatorjs) [![Discord Server](https://img.shields.io/discord/1075159588355190865?color=blue&label=Discord&logo=discord&logoColor=white&style=plastic)](https://discord.gg/P2g24jp)
+[![Discord Server](https://img.shields.io/discord/1075159588355190865?color=blue&label=Discord&logo=discord&logoColor=white&style=plastic)](https://discord.gg/P2g24jp)
 
 ## Features
 
@@ -26,7 +26,7 @@ A Discord.js v14 Module that allows you to Create an Akinator Command for Your D
 
 Let's take a look at how you can install this package into your Discord Bot Project.
 
-`npm i akinatorjs --save`
+`npm i akinator-djs --save`
 
 For versions 4.0.0 and above, you'll also need Discord.js v14. This can easily be installed with:
 
@@ -41,7 +41,7 @@ For versions earlier than 4.0.0, you'll need Discord.js v13 instead. However it 
 ### Initial Setup:
 ```js
 const { Client, IntentsBitField } = require("discord.js");
-const akinator = require("akinatorjs");
+const akinator = require("akinator-djs");
 const client = new Client({
     intents: [
         IntentsBitField.Flags.Guilds,
@@ -107,4 +107,4 @@ client.on("messageCreate", async message => {
 
 - 👋 Need Help? [Join Our Discord Server](https://discord.gg/gbZtdK6jvz)!
 
-- 👾 Found a Bug, or Inaccurate Translations? [Open an Issue](https://github.com/Ahmed1Dev/Akinatorjs/issues), or Fork and [Submit a Pull Request](https://github.com/Ahmed1Dev/Akinatorjs/pulls) on our [GitHub Repository](https://github.com/Ahmed1Dev/Akinatorjs)!
+- 👾 Found a Bug, or Inaccurate Translations? [Open an Issue](https://github.com/Ahmed1Dev/Akinatorjs/issues), or Fork and [Submit a Pull Request](https://github.com/Ahmed1Dev/Akinatorjs/pulls) on our [GitHub Repository](https://github.com/Ahmed1Dev/Akinator.js)!
